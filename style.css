@@ -1,0 +1,146 @@
+:root {
+    /* device sizes */
+    --mobile: 375px;
+    --desktop: 1440px;
+
+    /* colors */
+    --primary-dark-cyan: hsl(185, 75%, 39%);
+    --primary-very-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-greyish-blue: hsl(227, 10%, 46%);
+
+    --dark-grey: hsl(0, 0%, 59%);
+
+    /* typography */
+    --fs: 18px;
+
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+@font-face {
+    font-family: Kumbh;
+    src: url('./fonts/KumbhSans-VariableFont_wght.ttf');
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Kumbh, 'sans-serif';
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-dark-cyan);
+    background-image: url('./images/bg-pattern-top.svg'), url('./images/bg-pattern-bottom.svg');
+    background-position: right 45vw bottom 45vh, 45vw 45vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: var(--fw-400);
+}
+
+.card {
+    width: 350px;
+    height: 370px;
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 20px 20px 0px rgba(97, 94, 94, 0.2);
+}
+
+.card > img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.content > img {
+    position: absolute;
+    top: -20%;
+    width: 96px;
+    height: 96px;
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.details {
+    margin-top: 4rem;
+}
+
+.details > h2 {
+    font-size:  var(--fs);
+    font-weight: var(--fw-700);
+    color: var(--primary-very-desaturated-blue);
+}
+
+.details > h2 > span {
+    color: var(--dark-grey);
+}
+
+.details > p {
+    text-align: center;
+    margin-top: .7rem;
+    color: var(--dark-greyish-blue);
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    text-align: center;
+}
+
+.followers > h2, .likes > h2, .photos > h2 {
+    font-size: var(--fs);
+    color: var(--primary-very-desaturated-blue);
+}
+
+.followers > span, .likes > span, .photos > span{
+    font-size: 12px;
+    color: var(--dark-greyish-blue);
+}
+
+hr {
+    width: 100%;
+    margin-top: 2rem;
+    height: 0;
+    border: .1px solid hsl(0, 0%, 89%);
+}
+
+.attribution {
+    margin-top: 1rem;
+    padding: 2rem;
+    font-size: 14px;
+    color: white;
+}
+
+.attribution > a {
+    text-decoration: none;
+    color: var(--dark-greyish-blue);
+}
+
+@media screen and (max-width: 375px){
+    .card {
+        width: 300px;
+    }
+}
